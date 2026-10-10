@@ -1,0 +1,68 @@
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Floating WhatsApp Button */
+.floating-wa-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  width: 54px;
+  height: 54px;
+  background: #1faa53;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+  text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease;
+}
+
+.floating-wa-btn:hover {
+  transform: scale(1.06);
+  background: #25d366;
+}
+
+.wa-tooltip {
+  position: absolute;
+  right: 70px;
+  background: rgba(11, 14, 19, 0.94);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 11.5px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  padding: 7px 13px;
+  border-radius: 2px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.floating-wa-btn:hover .wa-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 640px) {
+  .floating-wa-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+}
